@@ -1,3 +1,7 @@
+# ActiveAttr 0.10.3 (February 16, 2018) #
+
+* ActiveAttr now supports Rails 5.2
+
 # ActiveAttr 0.10.2 (July 21, 2017) #
 
 * Add the license to the gemspec (Koichi ITO)
