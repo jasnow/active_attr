@@ -86,11 +86,11 @@ module ActiveAttr
           end
 
           it "casts a zero BigDecimal to false" do
-            typecaster.call(BigDecimal.new("0.0")).should equal false
+            typecaster.call(Kernel.BigDecimal("0.0")).should equal false
           end
 
           it "casts a non-zero BigDecimal to true" do
-            typecaster.call(BigDecimal.new("0.1")).should equal true
+            typecaster.call(Kernel.BigDecimal("0.1")).should equal true
           end
 
           it "casts -1 to true" do
@@ -106,11 +106,11 @@ module ActiveAttr
           end
 
           it "casts a negative zero BigDecimal to false" do
-            typecaster.call(BigDecimal.new("-0.0")).should equal false
+            typecaster.call(Kernel.BigDecimal("-0.0")).should equal false
           end
 
           it "casts a negative BigDecimal to true" do
-            typecaster.call(BigDecimal.new("-0.1")).should equal true
+            typecaster.call(Kernel.BigDecimal("-0.1")).should equal true
           end
         end
 
