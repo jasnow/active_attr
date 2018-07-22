@@ -33,6 +33,14 @@ module ActiveAttr
             typecaster.call("abc").should equal true
           end
 
+          it "casts a non-empty String starting with number 0 to true" do
+            typecaster.call("0c2").should equal true
+          end
+
+          it "casts a non-empty String starting with number > 0 to true" do
+            typecaster.call("1c2").should equal true
+          end
+
           {
             "t" => true,
             "f" => false,
@@ -119,12 +127,24 @@ module ActiveAttr
             typecaster.call("0").should equal false
           end
 
+          it "casts '0\\nx' to true" do
+            typecaster.call("0\nx").should equal true
+          end
+
           it "casts '1' to true" do
             typecaster.call("1").should equal true
           end
 
           it "casts '0.0' to false" do
             typecaster.call("0.0").should equal false
+          end
+
+          it "casts '.0' to false" do
+            typecaster.call(".0").should equal false
+          end
+
+          it "casts '0.' to false" do
+            typecaster.call("0.").should equal false
           end
 
           it "casts '0.1' to true" do
@@ -135,12 +155,24 @@ module ActiveAttr
             typecaster.call("-1").should equal true
           end
 
+          it "casts '+1' to true" do
+            typecaster.call("+1").should equal true
+          end
+
           it "casts '-0.0' to false" do
             typecaster.call("-0.0").should equal false
           end
 
+          it "casts '+0.0' to false" do
+            typecaster.call("+0.0").should equal false
+          end
+
           it "casts '-0.1' to true" do
             typecaster.call("-0.1").should equal true
+          end
+
+          it "casts '+0.1' to true" do
+            typecaster.call("+0.1").should equal true
           end
         end
       end
