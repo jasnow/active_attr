@@ -22,4 +22,5 @@ group :development do
   gem "spec_coverage", :platforms => [:mri_19, :mri_20, :mri_21, :mri_22, :mri_23, :mri_24], :git => "https://github.com/getaroom/spec_coverage.git"
   gem "travis"
   gem "yard"
+  gem 'rubocop-rspec'
 end
