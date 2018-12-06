@@ -19,7 +19,7 @@ Gem::Specification.new do |gem|
   gem.add_runtime_dependency "activemodel",   ">= 3.0.2", "< 6.0"
   gem.add_runtime_dependency "activesupport", ">= 3.0.2", "< 6.0"
 
-  gem.add_development_dependency "bundler",      "~> 1.0"
+  gem.add_development_dependency "bundler"
   gem.add_development_dependency "factory_bot", ">= 2.2", "< 5.0"
   gem.add_development_dependency "minitest"
   gem.add_development_dependency "rake",         ">= 0.9.0", "< 13"
